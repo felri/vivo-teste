@@ -7,7 +7,15 @@ const getItems = ({items}) => {
 
   for(let i = 0; i < auxItems.length; i++) {
     const hours = parseInt(auxItems[i]['Tempo estimado'].split(" ")[0])
-    if(sum + hours <= JOB_MAXIMUM_HOURS) {
+
+    //check if hours is larger than maximum
+    //remove it and ignore job
+    if(hours > JOB_MAXIMUM_HOURS) {
+      //remove item from array
+      auxItems.splice(i, 1) 
+      //decrease index because of array.splice
+      i--
+    } else if(sum + hours <= JOB_MAXIMUM_HOURS) {
       //add to the jobs array
       jobs.push(auxItems[i]['ID']);
       //add hours to the total sum

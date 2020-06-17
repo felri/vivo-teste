@@ -27,6 +27,7 @@ export default () => {
   const [error, setError] = React.useState(false)
   const [result, setResult] = React.useState(undefined)
 
+  //open json File from DropZone
   const handleUploadJson = ({jsonFile}) => {
     const reader = new FileReader();
     reader.onload = (function(e) {
