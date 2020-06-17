@@ -8,9 +8,9 @@ const getItems = ({items}) => {
   for(let i = 0; i < auxItems.length; i++) {
     const hours = parseInt(auxItems[i]['Tempo estimado'].split(" ")[0])
 
-    //check if hours is larger than maximum
+    //check if hours is larger than maximum, negative or not a number
     //remove it and ignore job
-    if(hours > JOB_MAXIMUM_HOURS || hours < 0) {
+    if(hours > JOB_MAXIMUM_HOURS || hours < 0 || Number.isNaN(hours)) {
       //remove item from array
       auxItems.splice(i, 1) 
       //decrease index because of array.splice
