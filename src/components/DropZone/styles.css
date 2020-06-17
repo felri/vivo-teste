@@ -1,0 +1,37 @@
+.dropzone-container {
+  display: flex !important;
+  height: 100vh !important;
+  align-items: center;
+  justify-content: center;
+  background-color: #ddf3f5;
+  
+}
+
+.droparea-container {
+  cursor: pointer;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  height: 600px;
+  width: 600px;
+  border-style: dashed;
+  border-width: 10px;
+  border-radius: 10px;
+  border-color: #a6dcef;
+  flex-direction: column;
+}
+
+svg {
+  transition: 0.5s;
+
+}
+
+.droparea-container:hover svg {
+  transform: rotate(20deg);
+}
+
+.text-dropzone {
+  color: #6b6b6b;
+  font-size: 20px;
+  font-weight: bold;
+}

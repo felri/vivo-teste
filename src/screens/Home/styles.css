@@ -1,0 +1,27 @@
+.container-result {
+  width: 400px;
+  text-align: center;
+  font-weight: 800;
+  font-size: 17px;
+  overflow: scroll;
+  overflow-x: hidden;
+  max-height: 600px;
+  display: flex;
+  justify-content: center;
+}
+
+pre {
+  border-bottom: 2px;
+  border-color: black;
+  text-decoration: underline;
+  text-align: justify;
+  color: #6b6b6b;
+}
+
+.container-error {
+  min-height: 129px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #b40505;
+}
