@@ -5,6 +5,23 @@ import 'react-responsive-modal/styles.css';
 import { Modal } from 'react-responsive-modal';
 import './styles.css';
 
+const Error = ({onClick, error}) => (
+  <Modal open={error} onClose={onClick} center>
+    <div className="container-error">
+      <h2>Algo deu errado, verifique o arquivo enviado</h2>
+    </div>
+  </Modal>
+)
+
+const Result = ({open, onClick, result}) => (
+  <Modal open={open} onClose={onClick} center>
+    {
+      result && 
+      <div className="container-result"><pre>{JSON.stringify(result, null, 2) }</pre></div>
+    }
+  </Modal>
+)
+
 export default () => {
   const [open, setOpen] = React.useState(false)
   const [error, setError] = React.useState(false)
@@ -30,17 +47,8 @@ export default () => {
   return (
     <>
       <DropZone handleUploadJson={handleUploadJson}/>
-      <Modal open={open} onClose={() => setOpen(false)} center>
-        {
-          result && 
-          <div className="container-result"><pre>{JSON.stringify(result, null, 2) }</pre></div>
-        }
-      </Modal>
-      <Modal open={error} onClose={() => setError(false)} center>
-        <div className="container-error">
-          <h2>Algo deu errado, verifique o arquivo enviado</h2>
-        </div>
-      </Modal>
+      <Result onClick={() => setOpen(false)} result={result} open={open}/>
+      <Error onClick={() => setError(false)} error={error}/>
     </>
   );
 }

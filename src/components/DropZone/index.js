@@ -2,7 +2,6 @@ import React, {useCallback} from 'react'
 import {useDropzone} from 'react-dropzone'
 import './styles.css'
 
-
 function FileSvg(props) {
   return (
     <svg viewBox="0 0 512 512" {...props}>
