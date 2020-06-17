@@ -10,7 +10,7 @@ const getItems = ({items}) => {
 
     //check if hours is larger than maximum
     //remove it and ignore job
-    if(hours > JOB_MAXIMUM_HOURS) {
+    if(hours > JOB_MAXIMUM_HOURS || hours < 0) {
       //remove item from array
       auxItems.splice(i, 1) 
       //decrease index because of array.splice
