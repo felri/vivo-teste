@@ -24,7 +24,7 @@ export default ({handleUploadJson}) => {
     <>
     <div className="dropzone-container" {...getRootProps()}>
       <div className="droparea-container">
-        <input className="input-dropzone" {...getInputProps()} />
+        <input className="input-dropzone" {...getInputProps()} accept="application/JSON"/>
         <FileSvg width='100px' height='100px' fill="#6b6b6b"/>
         {
           isDragActive ?
