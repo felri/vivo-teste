@@ -38,7 +38,7 @@ const getItems = ({items}) => {
   return jobs
 }
 
-const checkErrorsArray = ({array}) => {
+export const checkErrorsArray = ({array}) => {
   try {
     for(let item of array) {
       if(
@@ -53,7 +53,7 @@ const checkErrorsArray = ({array}) => {
   }
 }
 
-export default ({array}) => {
+export default function arrayTransform ({array}) {
   if(!checkErrorsArray({array})) {
     //sort by date
     const sorted = array.sort(function(a,b){
