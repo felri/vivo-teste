@@ -1,11 +1,16 @@
 import arrayTransform, { checkErrorsArray } from './arrayTransform'
 
 import correctMockup from 'mockups/correctMockup.json'
+import syntaxErrorMockup from 'mockups/syntaxErrorMockup.json'
 import negativeHoursMockup from 'mockups/negativeHoursMockup.json'
 import isNaNMockup from 'mockups/isNaNMockup.json'
 
 test("check if correctMockup.json doesn't have syntax erros", () => {
-  expect(checkErrorsArray(correctMockup)).toBe(true);
+  expect(checkErrorsArray({array:correctMockup})).toBe(undefined);
+});
+
+test("check if syntaxErrorMockup.json has syntax erros", () => {
+  expect(checkErrorsArray({array:syntaxErrorMockup})).toBe(true);
 });
 
 test("check if arrayTransform() returns the correct data", () => {
