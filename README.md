@@ -8,7 +8,7 @@
 #### Rodar projeto
 
     git clone https://github.com/felri/vivo-teste/
-    cd vivo-test
+    cd vivo-teste
     yarn 
     yarn start
 
