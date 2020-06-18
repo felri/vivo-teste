@@ -1,4 +1,4 @@
-#### Arquivos de interesse:
+#### Arquivos de interesse
 
     src/utils/arrayTransfrom.js -- ALGORITIMO
     src/utils/arrayTransfrom.test.js
