@@ -1,6 +1,6 @@
 const JOB_MAXIMUM_HOURS = 8;
 
-const getItems = ({items}) => {
+function getItems({items}) {
   let auxItems = [...items]
   let jobs = []
   let sum = 0;
@@ -31,14 +31,14 @@ const getItems = ({items}) => {
     //recursive with the rest
     const children = getItems({items: auxItems})
     //add the two arrays together 
-    // jobs = [1,2] [3,4]
+    //example: jobs = [1,2] [3,4]
     jobs = ([jobs, ...children])
   } else jobs = [jobs]
 
   return jobs
 }
 
-export const checkErrorsArray = ({array}) => {
+export function checkErrorsArray({array}){
   try {
     for(let item of array) {
       if(
@@ -59,6 +59,6 @@ export default function arrayTransform ({array}) {
     const sorted = array.sort(function(a,b){
       return new Date(a['Data Máxima de conclusão']) - new Date(b['Data Máxima de conclusão']) ;
     });
-    return getItems({items: sorted, master: true})
+    return getItems({items: sorted})
   } else console.log('error')
 }
